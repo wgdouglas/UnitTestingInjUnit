@@ -62,6 +62,25 @@ class OrderServiceTest {
         boolean isValid = OrderService.isValidOrder(pizzaOrder);
 
         //****ASSERT****
+        assertFalse(isValid);
+    }
+
+    @Test
+    void isValid_returnsTrueForAnOrderWithAnOrderOfLargeOrXLPizzas() {
+        //****SETUP****
+        Address address = new Address("123 Cool St.", "Citytown", "TX");
+
+        Pizza extraLarge = new Pizza("extra-large", Collections.emptyList());
+        Pizza large = new Pizza("large", List.of("pepperoni"));
+
+        PizzaOrder pizzaOrder = new PizzaOrder(
+                "Pizza Orders", address, List.of(extraLarge, large));
+
+
+        //****EXECUTE****
+        boolean isValid = OrderService.isValidOrder(pizzaOrder);
+
+        //****ASSERT****
         assertTrue(isValid);
     }
 }

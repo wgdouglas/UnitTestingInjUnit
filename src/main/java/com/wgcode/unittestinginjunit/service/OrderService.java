@@ -15,6 +15,7 @@ public class OrderService {
            List<Pizza> nonLargePizza = order.getPizzas()
                    .stream()
                    .filter(pizza -> pizza.getSize() != "large")
+                   .filter(pizza -> pizza.getSize() != "extra-large")
                    .collect(Collectors.toList());
 
        return nonLargePizza.size() == 0;
