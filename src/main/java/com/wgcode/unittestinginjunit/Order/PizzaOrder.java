@@ -12,4 +12,16 @@ public class PizzaOrder {
         this.address = address;
         this.pizzas = pizzas;
     }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public List<Pizza> getPizzas() {
+        return pizzas;
+    }
 }

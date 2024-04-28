@@ -10,4 +10,12 @@ public class Pizza {
         this.size = size;
         this.toppings = toppings;
     }
+
+    public String getSize() {
+        return size;
+    }
+
+    public List<String> getToppings() {
+        return toppings;
+    }
 }
